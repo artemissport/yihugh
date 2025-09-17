@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>這是一個肥胖宅男瘦了25公斤變身型男暖爸的故事 - 一休陪你一起愛瘦身</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2c5aa0;
+            --secondary-color: #ff6b35;
+            --accent-color: #00b894;
+            --success-color: #00cec9;
+            --dark-color: #2d3436;
+            --light-color: #f8f9fa;
+            --text-color: #2d3436;
+            --border-color: #e0e0e0;
+            --shadow: 0 8px 30px rgba(0,0,0,0.12);
+            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-success: linear-gradient(135deg, #00b894, #00cec9);
+            --gradient-warm: linear-gradient(135deg, #ff6b35, #f7931e);
+        }
+
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.7;
+            color: var(--text-color);
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 3px solid var(--accent-color);
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 6rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20"><defs><radialGradient id="a" cx="50%" cy="50%"><stop offset="0%" stop-color="rgba(255,255,255,.1)"/><stop offset="100%" stop-color="rgba(255,255,255,0)"/></radialGradient></defs><circle cx="50" cy="10" r="10" fill="url(%23a)"/></svg>') repeat;
+            opacity: 0.1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-meta {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.7rem 1.2rem;
+            border-radius: 30px;
+            backdrop-filter: blur(10px);
+            font-size: 0.95rem;
+        }
+
+        /* Main Article */
+        .main-content {
+            padding: 4rem 0;
+        }
+
+        .article {
+            background: white;
+            margin: -4rem auto 4rem;
+            max-width: 900px;
+            border-radius: 25px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            position: relative;
+            z-index: 2;
+        }
+
+        .article-header {
+            padding: 3rem;
+            border-bottom: 2px solid var(--border-color);
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+        }
+
+        .article-tags {
+            display: flex;
+            gap: 0.7rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: var(--accent-color);
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 25px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .before-after-hero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .transformation-card {
+            text-align: center;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            min-width: 200px;
+        }
+
+        .transformation-number {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .transformation-number.before { color: #e74c3c; }
+        .transformation-number.after { color: var(--accent-color); }
+        .transformation-number.lost { color: var(--secondary-color); }
+
+        .transformation-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+        }
+
+        .article-content {
+            padding: 3rem;
+        }
+
+        .article-content h2 {
+            color: var(--primary-color);
+            margin: 3rem 0 1.5rem;
+            font-size: 1.8rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .article-content h2::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 5px;
+            height: 2rem;
+            background: var(--secondary-color);
+            border-radius: 3px;
+        }
+
+        .article-content h3 {
+            color: var(--accent-color);
+            margin: 2rem 0 1rem;
+            font-size: 1.3rem;
+        }
+
+        .article-content p {
+            margin-bottom: 1.8rem;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .highlight-quote {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 2rem;
+            border-radius: 20px;
+            margin: 3rem 0;
+            position: relative;
+            font-style: italic;
+            font-size: 1.1rem;
+            text-align: center;
+        }
+
+        .highlight-quote::before {
+            content: '"';
+            font-size: 4rem;
+            position: absolute;
+            top: -1rem;
+            left: 2rem;
+            opacity: 0.3;
+            font-family: serif;
+        }
+
+        .stats-section {
+            background: var(--gradient-success);
+            color: white;
+            padding: 3rem;
+            margin: 3rem -3rem;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat-item {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 1.5rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .journey-section {
+            margin: 4rem 0;
+        }
+
+        .journey-phases {
+            display: grid;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .phase {
+            display: flex;
+            align-items: flex-start;
+            gap: 2rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 20px;
+            position: relative;
+        }
+
+        .phase:nth-child(even) {
+            flex-direction: row-reverse;
+            background: linear-gradient(135deg, #fff5f5, #ffe8e8);
+        }
+
+        .phase-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .phase:nth-child(odd) .phase-icon {
+            background: var(--gradient-primary);
+        }
+
+        .phase:nth-child(even) .phase-icon {
+            background: var(--gradient-warm);
+        }
+
+        .phase-content h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .key-points {
+            background: #fff9c4;
+            border-left: 5px solid #f39c12;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .key-points h4 {
+            color: #d68910;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .key-points ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .key-points li {
+            padding: 0.3rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .key-points li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #27ae60;
+            font-weight: bold;
+        }
+
+        .motivation-section {
+            background: var(--gradient-warm);
+            color: white;
+            padding: 3rem;
+            margin: 4rem -3rem;
+            border-radius: 25px;
+            text-align: center;
+        }
+
+        .family-section {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 4rem 3rem;
+            margin: 4rem -3rem;
+            border-radius: 25px;
+            text-align: center;
+        }
+
+        .family-section h2 {
+            color: white;
+            margin-bottom: 2rem;
+        }
+
+        .family-section h2::before {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .wisdom-section {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 3rem;
+            margin: 4rem -3rem;
+            border-radius: 25px;
+        }
+
+        .train-metaphor {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            border-left: 5px solid rgba(255, 255, 255, 0.3);
+        }
+
+        /* Image Gallery Sections */
+        .image-gallery {
+            margin: 3rem 0;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .gallery-item {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-caption {
+            padding: 1rem;
+            font-size: 0.9rem;
+            color: var(--text-color);
+            text-align: center;
+            background: #f8f9fa;
+        }
+
+        .single-image {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .single-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .before-after-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .comparison-item {
+            text-align: center;
+        }
+
+        .comparison-item img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .comparison-label {
+            margin-top: 1rem;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .comparison-label.before { color: #e74c3c; }
+        .comparison-label.after { color: var(--accent-color); }
+
+        /* Footer */
+        .footer {
+            background: var(--dark-color);
+            color: white;
+            padding: 4rem 0 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1.5rem;
+            color: var(--accent-color);
+            font-size: 1.2rem;
+        }
+
+        .footer-section a {
+            color: #ddd;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.7rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent-color);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #444;
+            padding-top: 2rem;
+            margin-top: 3rem;
+        }
+
+        /* Scroll to top button */
+        .scroll-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            cursor: pointer;
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            font-size: 1.2rem;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-3px);
+            background: #00a085;
+            box-shadow: 0 6px 20px rgba(0, 184, 148, 0.4);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding: 4rem 0;
+            }
+
+            .hero-meta {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .article {
+                margin: -2rem 10px 2rem;
+            }
+
+            .article-content, .article-header {
+                padding: 2rem;
+            }
+
+            .stats-section, .motivation-section, .family-section, .wisdom-section {
+                margin: 3rem -2rem;
+                padding: 2rem;
+            }
+
+            .phase {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .phase:nth-child(even) {
+                flex-direction: column;
+            }
+
+            .before-after-comparison {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .transformation-card {
+                min-width: auto;
+                width: 100%;
+            }
+
+            .before-after-hero {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .hero {
+                padding: 3rem 0;
+            }
+
+            .article-content h2::before {
+                display: none;
+            }
+
+            .article-content h2 {
+                padding-left: 0;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .article {
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .phase {
+            animation: fadeInUp 0.6s ease;
+        }
+
+        .phase:nth-child(2) { animation-delay: 0.1s; }
+        .phase:nth-child(3) { animation-delay: 0.2s; }
+        .phase:nth-child(4) { animation-delay: 0.3s; }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="container">
+            <div class="nav">
+                <a href="/" class="logo">
+                    <i class="fas fa-dumbbell"></i>
+                    一休愛瘦身
+                </a>
+                <ul class="nav-links">
+                    <li><a href="/">首頁</a></li>
+                    <li><a href="/about">關於一休</a></li>
+                    <li><a href="/workout">運動教學</a></li>
+                    <li><a href="/nutrition">營養知識</a></li>
+                    <li><a href="/success">成功案例</a></li>
+                    <li><a href="/contact">聯絡我們</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>這是一個肥胖宅男瘦了25公斤變身型男暖爸的故事</h1>
+                <p class="hero-subtitle">從86公斤到61公斤的蛻變之路<br>一個關於愛情、決心與重新找回自信的真實故事</p>
+                <div class="hero-meta">
+                    <span><i class="fas fa-calendar"></i> 2025年4月25日</span>
+                    <span><i class="fas fa-user"></i> 李一休 (leeyihugh)</span>
+                    <span><i class="fas fa-heart"></i> 為愛而變</span>
+                    <span><i class="fas fa-trophy"></i> 25kg成功減重</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Article -->
+        <article class="article">
+            <header class="article-header">
+                <div class="article-tags">
+                    <span class="tag">減肥故事</span>
+                    <span class="tag">真實案例</span>
+                    <span class="tag">健身勵志</span>
+                    <span class="tag">愛情動力</span>
+                    <span class="tag">家庭生活</span>
+                </div>
+                
+                <div class="before-after-hero">
+                    <div class="transformation-card">
+                        <div class="transformation-number before">86kg</div>
+                        <div class="transformation-label">減重前</div>
+                    </div>
+                    <div class="transformation-card">
+                        <div class="transformation-number after">61kg</div>
+                        <div class="transformation-label">減重後</div>
+                    </div>
+                    <div class="transformation-card">
+                        <div class="transformation-number lost">25kg</div>
+                        <div class="transformation-label">成功減重</div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="article-content">
+                <!-- 主題照片 -->
+                <div class="single-image">
+                    <img src="images/transformation-before-after-main.jpg" alt="減肥前後對比照片">
+                </div>
+
+                <div class="highlight-quote">
+                    這是一個我減重25公斤的故事
+                </div>
+
+                <h2>宅男的黑暗時期</h2>
+                <p>「ㄟ，你看起來很痴肥耶～」</p>
+                <p>「ㄟ，你奶奶很大，走路會晃。很像果凍，很噁心耶。」</p>
+                <p>「ㄟ，你太胖了，坐後面車子會垮下去，你坐前面啦。後座太擠了擠不下你。」</p>
+                
+                <p>不知道從什麼時候開始，肥胖、胖子、肥子，這些我人生從沒想過的字眼開始出現在我的生活裡。更沒想過，我後來居然也習慣了人家這樣叫我，而打從心底覺得自己是一個一輩子瘦不下來的胖子。</p>
+                
+                <p>而我，也因此跟減肥這件事結下了不解之緣。</p>
+
+                <h2>曾經的自信歲月</h2>
+                <p>曾經小時候別人都說我長得有點可愛，所以「帥」這個字好像也很少在我人生中出現，大部分人對我的印象都是有點可愛。因為從小就有運動習慣，國小時是籃球隊的，國中時是柔道隊的，所以胖這件事好像也從來沒困擾過我。</p>
+
+                <!-- 童年照片 -->
+                <div class="single-image">
+                    <img src="images/childhood-photo.jpg" alt="童年時期照片">
+                    <p style="text-align: center; margin-top: 1rem; color: #666;">國三時全家去旅遊在游泳池拍的照片，看得出我那時對身材挺有自信</p>
+                </div>
+
+                <div class="journey-section">
+                    <h2>體重失控的開始</h2>
+                    <div class="journey-phases">
+                        <div class="phase">
+                            <div class="phase-icon">
+                                <i class="fas fa-heart-broken"></i>
+                            </div>
+                            <div class="phase-content">
+                                <h3>運動中斷期</h3>
+                                <p>記得好像是高中的時候腳受了一次很大的傷，有將近1、2年的時間都無法運動。運動量減少了，但食量卻沒有改變。吃東西有大碗絕不吃小碗，吃麥當勞薯條可樂一定要加大，吃到飽不吃到走不動為止覺得不划算。</p>
+                            </div>
+                        </div>
+
+                        <div class="phase">
+                            <div class="phase-icon">
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                            <div class="phase-content">
+                                <h3>飲食失控期</h3>
+                                <p>反正就是來者不拒，大吃大喝對我來說是一種樂趣。我的體重好像是從那裡開始慢慢呈現成長的曲線，但身高卻一直維持原地不動。一開始想說才胖一點點沒關係，胖一點沒影響，然後慢慢體重就維持著逐年緩步的提升。</p>
+                            </div>
+                        </div>
+
+                        <div class="phase">
+                            <div class="phase-icon">
+                                <i class="fas fa-scale"></i>
+                            </div>
+                            <div class="phase-content">
+                                <h3>體重巔峰期</h3>
+                                <p>忽然有一天驚覺的時候，我已經胖到我人生的巔峰，體重直逼快90公斤。不高的我看起來就是個胖子無誤。只覺得自己就算胖也是個可愛的胖子，但是等到胖到某一個程度已經脫離可愛這個範圍的時候才驚覺來不及了。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 肥胖時期照片展示 -->
+                <div class="image-gallery">
+                    <h3>那時候的我...</h3>
+                    <div class="gallery-grid">
+                        <div class="gallery-item">
+                            <img src="images/overweight-selfie-1.jpg" alt="肥胖時期自拍照1">
+                            <div class="gallery-caption">時不時還會很有自信來個自拍</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/overweight-food-photo-1.jpg" alt="與食物合照1">
+                            <div class="gallery-caption">特別喜歡跟食物拍照</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/overweight-casual-1.jpg" alt="肥胖時期日常照1">
+                            <div class="gallery-caption">拍照的姿勢跟表情還挺多的</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/overweight-messy-style-1.jpg" alt="邋遢造型照片">
+                            <div class="gallery-caption">出門真的隨便亂穿，頭髮也懶得整理</div>
+                        </div>
+                    </div>
+                </div>
+
+                <p>但其實那時候的胖子，表面上看起來對自己很有自信，心裡其實是很沒自信的。現在看照片從我的眼神看得出來我對自己是不開心的。事實上回想起來有段日子感覺真的是很黑暗的。</p>
+
+                <div class="key-points">
+                    <h4>那時候的我完全失去了對自己的要求：</h4>
+                    <ul>
+                        <li>因為胖不好買衣服，所以衣服都亂穿</li>
+                        <li>因為胖反正不帥，所以頭髮也都不整理</li>
+                        <li>因為胖不想出門，所以每天都亂七八糟的</li>
+                        <li>完完全全化身為一個宅男</li>
+                    </ul>
+                </div>
+
+                <p>這些照片是12～3年前的我，現在看那時的我才20出頭歲而已，怎麼可以把自己搞得像一個肥胖糟老頭一樣。難怪那時身邊一堆兄弟朋友總是看不過去，常常一直用言語刺激我希望我減肥。</p>
+
+                <!-- 更多肥胖時期照片 -->
+                <div class="image-gallery">
+                    <div class="gallery-grid">
+                        <div class="gallery-item">
+                            <img src="images/overweight-no-confidence-1.jpg" alt="沒自信的笑容">
+                            <div class="gallery-caption">笑起來其實也很沒自信，常常不知道要用什麼表情</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/overweight-exercise-attempt.jpg" alt="在家運動的照片">
+                            <div class="gallery-caption">當時在家裡狂做運動，流全身汗後自以為有瘦一點</div>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>無數次失敗的減肥經歷</h2>
+                <p>人的天性都是愛漂亮的，誰會不想看起來身材標準，穿衣好看，瘦瘦帥帥的呢？其實在我胖後，我也用過無數個方法減肥。</p>
+
+                <div class="key-points">
+                    <h4>我嘗試過的錯誤減肥方法：</h4>
+                    <ul>
+                        <li>大家想得到的不吃、少吃多運動</li>
+                        <li>吃減肥藥、針灸</li>
+                        <li>每天三餐吃蘋果、芭樂過日子</li>
+                        <li>把超商能量凍飲當成正餐在吃</li>
+                        <li>激烈的斷食，1～2個禮拜每天都只吃一餐</li>
+                        <li>去減肥診所花好幾千拿一堆莫名其妙的減肥藥</li>
+                    </ul>
+                </div>
+
+                <p>但這種方式一來很難執行，二來根本也不是正確的減重方式，只會讓你越減越肥。反覆的錯誤減肥，最後會到一種大家說的連喝水吃空氣都會肥的境界。</p>
+
+                <div class="highlight-quote">
+                    用錯誤減肥方式的結果就是當你發現你努力了1～2個禮拜，好不容易瘦了幾公斤後，你想放鬆一下自己，不小心吃一頓大餐後你的體重就回來了。然後接著你就會非常不爽，為什麼我那麼努力減肥一下就胖回來，根本也沒有用，所以開始自暴自棄，暴飲暴食。
+                </div>
+
+                <p>當時我常常白天嚷嚷著我在減肥中，不要找我聚餐，不可以吃東西。但卻在夜深人靜後，深夜12點時，趁著大家都睡了偷偷跑去市場吃控肉飯，還要加點一份鹹酥雞跟珍奶當配菜吃，彷彿為了回饋白天的挨餓，非得吃到要吐了才會心甘情願。</p>
+
+                <p>在大吃大喝，酒足飯飽後又非常後悔幹嘛要吃那麼多，很想把剛才吃的全部吐出來。就這樣跟發下豪語告訴別人我要減肥，然後又失敗，這樣子循環一直不斷重複著。現在回想起來那段時間生理跟心理上都承受著巨大的折磨跟痛苦。</p>
+
+                <!-- 減肥失敗時期照片 -->
+                <div class="single-image">
+                    <img src="images/overweight-peak-weight.jpg" alt="體重巔峰時期照片">
+                    <p style="text-align: center; margin-top: 1rem; color: #666;">不騙你們，我當時真是神豬一隻無誤</p>
+                </div>
+
+                <h2>自我放棄的時期</h2>
+                <p>而不當的減肥方式也總是讓我在每一次的復胖時變得比上次更胖。越吃越胖，越減越肥這句話完全就是印證在當時的我身上。</p>
+
+                <p>而後來的自己也似乎習慣自己是個胖子了，因為反覆的失敗，徒勞無功的減肥太多次到後來也不想減肥了。反正我就是個胖子了，每天的大吃大喝就是我宣洩壓力的方式，那時自己一個人的餐費一個月都要吃掉上萬元。</p>
+
+                <!-- 有趣的動物照片 -->
+                <div class="single-image">
+                    <img src="images/animal-photo-funny.jpg" alt="連動物都不願意合照">
+                    <p style="text-align: center; margin-top: 1rem; color: #666;">胖得連動物都不願意跟我拍照，硬要把頭轉一邊</p>
+                </div>
+
+                <div class="motivation-section">
+                    <h2>轉捩點：天使的出現</h2>
+                    <p>直到有一天一個天使走進我的生命中，讓我深深燃燒起認真為她減肥一回的動力，那是一種一定要成功的決心，一種不成功便成仁的心態。</p>
+                    <p><strong>我一定要瘦，不論花多久時間我一定要成功瘦下來。</strong></p>
+                </div>
+
+                <h2>愛情的力量</h2>
+                <p>在一個朋友的聚會認識了她，就有一種一見鍾情的感覺，但當時我太胖了，我自己都對自己的外表沒自信，我又怎麼可能追得到她。</p>
+
+                <p>當時故意用半開玩笑的心態跟對方說，如果我可以瘦20公斤，要她陪我約會一天，請我吃一頓飯，當做鼓勵。後來對方說她覺得反正不可能，隨便答應鼓勵一下我也無妨，殊不知她就這樣也走進我的生命中了。</p>
+
+                <p>而我自己心裡則是想把這一個目標當成一個動力，瘦下來後一定要勇敢去追求她。</p>
+
+                <h2>正確的減重觀念</h2>
+                <p>我開始瘋狂的開始看書，上網，搜集減肥的知識，參考別人減肥成功的經驗。</p>
+
+                <div class="key-points">
+                    <h4>我學到的正確減重觀念：</h4>
+                    <ul>
+                        <li>除了運動外，飲食控制也是很重要</li>
+                        <li>正確的飲食才能達到最好的效果</li>
+                        <li>以前那些方式全部都是錯誤的</li>
+                        <li>不吃或少吃長期下來只會減掉最重要的肌肉</li>
+                        <li>基礎代謝率的觀念很重要</li>
+                        <li>飲食跟運動的均衡是減重最重要的關鍵</li>
+                        <li>持之以恆的耐心更是成功之鑰</li>
+                    </ul>
+                </div>
+
+                <div class="stats-section">
+                    <h3>我的減重成果</h3>
+                    <p>就這樣花了將近1年的時間，我成功的從人生最胖的86公斤瘦了快25公斤</p>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-number">86kg</div>
+                            <div class="stat-label">減重前最高體重</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">61kg</div>
+                            <div class="stat-label">減重後體重</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">365</div>
+                            <div class="stat-label">堅持天數</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">25kg</div>
+                            <div class="stat-label">成功減重</div>
+                        </div>
+                    </div>
+                </div>
+
+                <p>慢慢從一個痴肥中年宅男變成一個清新少年</p>
+
+                <!-- 減重成功初期照片 -->
+                <div class="single-image">
+                    <img src="images/after-weight-loss-early.jpg" alt="減重成功初期照片">
+                </div>
+
+                <h2>減重過程的辛苦</h2>
+                <p>其實真的要講，減重的過程是很辛苦的，那種辛苦不是因為你要控制飲食跟開始運動而已，更多是一種心理上的。</p>
+
+                <p>當別人半夜在吃宵夜，吃著鹹酥雞配上冰啤酒或飲料時，你要告訴自己不可以吃。減肥的初期最重要，只要改掉過去的壞習慣，習慣是可以培養的，當你習慣不吃宵夜後，久了不吃宵夜就變成一種習慣了。</p>
+
+                <div class="key-points">
+                    <h4>我培養的健康習慣：</h4>
+                    <ul>
+                        <li>肚子餓時學會如何不挨餓的慎選健康的食物</li>
+                        <li>以前常常去吃吃到飽的習慣變成吃單點的</li>
+                        <li>學習控制食量吃到覺得有飽不餓就可以了</li>
+                        <li>胃的容量需要重新適應</li>
+                        <li>每天保持運動成為了一種習慣</li>
+                    </ul>
+                </div>
+
+                <div class="highlight-quote">
+                    運動最困難的不是運動的當下，而是你要下定決心換上運動服走出去那一刻。
+                </div>
+
+                <p>一開始我也跟大家一樣，才跑個1、2公里，就上氣不接下氣，氣喘呼呼，覺得心臟跟全身都要爆炸了。就這樣慢慢循序漸進，1公里、3公里、到5公里、10公里，把運動培養成一種習慣。</p>
+
+                <p>以前都靠吃來釋放壓力，後來開始運動後居然發現運動可以很大的幫助釋放壓力，也不用再靠大吃大喝來宣洩。</p>
+
+                <!-- 運動照片 -->
+                <div class="single-image">
+                    <img src="images/marathon-running.jpg" alt="參加馬拉松路跑">
+                    <p style="text-align: center; margin-top: 1rem; color: #666;">後來還跟朋友一起參加了馬拉松路跑，這在我是胖子時，都是以前從沒想過的事</p>
+                </div>
+
+                <h2>肌力訓練的重要</h2>
+                <p>我也開始不停上網學習，學習到肌肉對於維持身材的重要性，了解到原來不吃反而會消耗身體珍貴的肌肉。開始認識到肌肉不會變成脂肪，脂肪也不會變成肌肉，不要再在那裡自欺欺人說我只是壯不是胖，事實上我以前那個樣子就是胖。</p>
+
+                <p>開始學習在家做肌力運動，伏地挺身、舉啞鈴、深蹲，這些以前沒學過的運動知識開始慢慢學習。每次都強迫自己一定要堅持才會有成果，那一大塊圓圓的肚子也終於給我練出六塊肌。現在只要有做肌力那天做個3、5百個仰臥起坐都是固定的功課。</p>
+
+                <!-- 健身成果照片 -->
+                <div class="image-gallery">
+                    <div class="gallery-grid">
+                        <div class="gallery-item">
+                            <img src="images/muscle-training-results.jpg" alt="肌力訓練成果">
+                            <div class="gallery-caption">那一大塊圓圓的肚子也終於給我練出六塊肌</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/confident-posture.jpg" alt="自信的姿態">
+                            <div class="gallery-caption">變瘦後開始變得勇於打扮，敢嘗試不同的造型</div>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>外在與內在的改變</h2>
+                <p>變瘦後我開始變得勇於打扮，敢嘗試不同的造型。從照片裡也看得出拍照的笑容變得有自信許多。</p>
+
+                <p>當時因為也有在網路上分享過自己的故事，還曾經被找上節目講自己減肥成功的經驗。最記得當時瘦下來後很過癮的把以前肥胖時穿的衣服全丟了，只留1、2件下來做紀念，告訴自己以後不會再胖回去了，然後一口氣買了很多S號的衣服跟30腰的褲子。</p>
+
+                <!-- 減重成功後照片 -->
+                <div class="image-gallery">
+                    <div class="gallery-grid">
+                        <div class="gallery-item">
+                            <img src="images/after-weight-loss-confident-1.jpg" alt="減重成功後自信照片1">
+                            <div class="gallery-caption">從照片裡看得出拍照的笑容變得有自信許多</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/after-weight-loss-confident-2.jpg" alt="減重成功後自信照片2">
+                            <div class="gallery-caption">還曾經被找上節目講減肥成功的經驗</div>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>愛情的美好結果</h2>
+                <p>就這樣我成功約了會，也順利的追求到我生命中最愛的女人潔西卡。</p>
+
+                <!-- 與女友的照片 -->
+                <div class="single-image">
+                    <img src="images/with-girlfriend.jpg" alt="與女友合照">
+                </div>
+
+                <p>如果當時沒有她我現在大概還是一個胖子，瘦下來後其實不止是身材的改變，我覺得最重要的是我心理的改變非常大。</p>
+
+                <div class="key-points">
+                    <h4>減重帶給我的心理改變：</h4>
+                    <ul>
+                        <li>開始相信自己是一個能夠說到做到的人</li>
+                        <li>是一個持之以恆的人</li>
+                        <li>開始對自己有自信</li>
+                        <li>說話時能夠自信的直視別人</li>
+                        <li>能夠跟別人分享減重成功的經驗</li>
+                    </ul>
+                </div>
+
+                <p>這些都是我覺得瘦下來後比身材帶給我的更棒的禮物。就這樣最後我鼓起勇氣求婚了，成功的娶得美嬌娘回家。</p>
+
+                <!-- 求婚和結婚照片 -->
+                <div class="image-gallery">
+                    <div class="gallery-grid">
+                        <div class="gallery-item">
+                            <img src="images/proposal-photo.jpg" alt="求婚照片">
+                            <div class="gallery-caption">最後我鼓起勇氣求婚了</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/wedding-photo.jpg" alt="結婚照片">
+                            <div class="gallery-caption">成功的娶得美嬌娘回家</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="family-section">
+                    <h2>家庭生活的幸福</h2>
+                    <p>我們連結婚算的話在一起已經20年了。我很感謝當初老婆出現在我的生命裡，沒有她現在我的人生不知道是什麼樣子。</p>
+                    <p>然後我們有了女兒，開始了一家三口的生活。為了在女兒眼中永遠保持帥氣把拔的形象，雖然在女兒剛出生時體重又一度失控。</p>
+                </div>
+
+                <h2>第二次減重挑戰</h2>
+                <p>寶貝女兒剛出生時，當時從老婆懷孕到跟著老婆一起坐月子，整個沒在控制。加上女兒因為個性比較膽小很容易哭，常常日夜休息都不正常，一度失控到胖了十幾公斤。</p>
+
+                <!-- 二次發胖照片 -->
+                <div class="image-gallery">
+                    <div class="gallery-grid">
+                        <div class="gallery-item">
+                            <img src="images/second-weight-gain-1.jpg" alt="女兒出生後發胖照片1">
+                            <div class="gallery-caption">寶貝女兒剛出生時，整個沒在控制</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/second-weight-gain-2.jpg" alt="女兒出生後發胖照片2">
+                            <div class="gallery-caption">一度失控到這種程度，胖了十幾公斤</div>
+                        </div>
+                    </div>
+                </div>
+
+                <p>但在女兒越來越懂事後，不想女兒眼中的把拔是肥胖加氣色不好的，趕緊又開始第二次減肥計劃，成功又瘦了回來，恢復完美把拔形象。</p>
+
+                <!-- 二次減重成功照片 -->
+                <div class="image-gallery">
+                    <div class="gallery-grid">
+                        <div class="gallery-item">
+                            <img src="images/second-weight-loss-success.jpg" alt="二次減重成功照片">
+                            <div class="gallery-caption">成功又瘦了回來，恢復完美把拔形象</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/with-daughter.jpg" alt="與女兒合照">
+                            <div class="gallery-caption">女兒是我生命中除了老婆外最珍貴的禮物</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 家庭生活照片 -->
+                <div class="image-gallery">
+                    <div class="gallery-grid">
+                        <div class="gallery-item">
+                            <img src="images/family-travel.jpg" alt="家庭旅遊照片">
+                            <div class="gallery-caption">帶老婆小孩一起出國玩</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/family-with-cat.jpg" alt="一家三口與貓咪">
+                            <div class="gallery-caption">一家三口加一隻貓就是我們家全部生活的重心</div>
+                        </div>
+                    </div>
+                </div>
+
+                <p>讓女兒看見老爸是帥的是我現在一直保持身材很重要的動力之一。</p>
+
+                <h2>驚人的蛻變對比</h2>
+                <p>現在回頭看看以前很慶幸我有減肥成功。我自己都不敢相信這是同一個人,而且左邊的還是10年前的。</p>
+
+                <!-- 主要前後對比照片 -->
+                <div class="before-after-comparison">
+                    <div class="comparison-item">
+                        <img src="images/before-transformation-comparison.jpg" alt="減重前對比照">
+                        <div class="comparison-label before">減重前</div>
+                    </div>
+                    <div class="comparison-item">
+                        <img src="images/after-transformation-comparison.jpg" alt="減重後對比照">
+                        <div class="comparison-label after">減重後</div>
+                    </div>
+                </div>
+
+                <!-- 多組對比照片 -->
+                <div class="image-gallery">
+                    <h3>更多前後對比</h3>
+                    <div class="gallery-grid">
+                        <div class="gallery-item">
+                            <img src="images/comparison-set-1.jpg" alt="對比照片組1">
+                            <div class="gallery-caption">以前跟我哥出去，還有人說一點都不像</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/comparison-set-2.jpg" alt="對比照片組2">
+                            <div class="gallery-caption">左邊那樣子，我發誓不會再在我生命中再出現了</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 最新照片 -->
+                <div class="single-image">
+                    <img src="images/current-family-photo.jpg" alt="最新全家福照片">
+                    <p style="text-align: center; margin-top: 1rem; color: #666;">讓女兒看見老爸是帥的是我現在一直保持身材很重要的動力之一</p>
+                </div>
+
+                <h2>對錯誤減肥法的呼籲</h2>
+                <p>常常在電視或網路上看到很多分享一些自認為是速成卻完全不對的減肥法，或聽到誰誰誰講說某某去看醫生吃藥瘦了十幾公斤，我的心裡就會忍不住一直大聲吶喊：「不是！不是！減肥不是這樣子減的！」</p>
+
+                <p>不是想要證明自己才是對的，而是怕那些真的有心想減重的人也會走跟我以前一樣的彎路。</p>
+
+                <div class="wisdom-section">
+                    <h2>給正在努力的朋友</h2>
+                    <div class="train-metaphor">
+                        <p><strong>有兩台火車，一台是普通車，一台是高鐵</strong></p>
+                        <p>兩台車都可以到達終點，兩條路上各有各的景色跟體會，無所謂快或慢，好或不好。</p>
+                        <p>只要你的方向是正確的，不要放棄，不管快慢，只要最後可以到達終點的就都是好車。</p>
+                    </div>
+                    
+                    <p>如果我小小的經驗可以幫助到那怕是一個人都好，我也會覺得很開心。</p>
+                    <p><strong>希望我的分享也能激勵你，讓你們相信，只要持之以恆，終有成功的一天！</strong></p>
+                </div>
+
+                <div class="highlight-quote">
+                    現在回頭看看以前很慶幸我有減肥成功。我自己都不敢相信這是同一個人，而且左邊的還是10年前的。左邊那樣子，我發誓不會再在我生命中再出現了。
+                </div>
+            </div>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>關於一休</h4>
+                    <a href="/about">我的故事</a>
+                    <a href="/philosophy">健身理念</a>
+                    <a href="/achievements">成就與認證</a>
+                    <a href="/transformation">蛻變歷程</a>
+                </div>
+                <div class="footer-section">
+                    <h4>熱門內容</h4>
+                    <a href="/workout-plans">運動計畫</a>
+                    <a href="/nutrition-guide">營養指南</a>
+                    <a href="/success-stories">成功案例</a>
+                    <a href="/healthy-recipes">健康食譜</a>
+                </div>
+                <div class="footer-section">
+                    <h4>聯絡方式</h4>
+                    <a href="mailto:contact@leeyihugh.com">contact@leeyihugh.com</a>
+                    <a href="https://www.facebook.com/leeyihugh" target="_blank">Facebook 粉絲頁</a>
+                    <a href="https://www.instagram.com/leeyihugh" target="_blank">Instagram</a>
+                    <a href="https://line.me/ti/p/leeyihugh" target="_blank">LINE 官方帳號</a>
+                </div>
+                <div class="footer-section">
+                    <h4>服務項目</h4>
+                    <a href="/personal-training">個人教練</a>
+                    <a href="/online-coaching">線上指導</a>
+                    <a href="/group-classes">團體課程</a>
+                    <a href="/corporate-wellness">企業健康</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 一休陪你一起愛瘦身. All rights reserved.</p>
+                <p style="margin-top: 0.5rem; opacity: 0.8;">讓我們一起追求健康美好的人生，相信自己能夠改變！</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to top button -->
+    <button class="scroll-top" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Scroll to top functionality
+        window.addEventListener('scroll', function() {
+            const scrollButton = document.querySelector('.scroll-top');
+            if (window.pageYOffset > 400) {
+                scrollButton.classList.add('visible');
+            } else {
+                scrollButton.classList.remove('visible');
+            }
+        });
+
+        function scrollToTop
+                        
